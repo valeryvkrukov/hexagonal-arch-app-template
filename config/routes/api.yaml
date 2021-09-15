@@ -1,0 +1,3 @@
+customer:
+  resource: ../../src/Customer/Controller
+  type: annotation

@@ -20,6 +20,11 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
+            - '../src/*/Message/Command/*'
+            - '../src/*/Message/Query/*'
+            - '../src/*/Message/Event/*'
+            - '../src/*/Message/Response/*'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    Fusonic\HttpKernelExtensions\Controller\RequestDtoResolver:
+        tags:
+            - { name: controller.argument_value_resolver, priority: 50 }
